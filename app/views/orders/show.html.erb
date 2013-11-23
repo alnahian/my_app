@@ -20,6 +20,22 @@
   <%= @order.pay_type %>
 </p>
 
+<p>
+<%= render @order.line_items %>
+<td class="total_cell">Total : <%= number_to_currency(@order.total_price) %></td>
+</br>
+</p>
+</br>
+
+<p>
+  <b>Paid amount:</b>
+  <%= number_to_currency(@order.paid_amount) %>
+</p>
+
+<p>
+  <b>Due amount:</b>
+  <%= number_to_currency(@order.current_due) %>
+</p>
 
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

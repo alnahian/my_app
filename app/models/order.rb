@@ -1,6 +1,6 @@
 class Order < ActiveRecord::Base
 
-  attr_accessible :address, :email, :name, :pay_type
+  attr_accessible :address, :email, :name, :pay_type, :paid_amount, :previous_due, :published_at, :due_amount
   has_many :line_items, :dependent => :destroy
   validates :name, :address, :email, :pay_type, :presence => true
   PAYMENT_TYPES = [ "Check", "Credit card", "Purchase order" ]
@@ -14,4 +14,17 @@ class Order < ActiveRecord::Base
 		line_items << item
 	end
   end
+  
+  def total_price
+    line_items.to_a.sum { |item| item.total_price }
+  end
+  
+  def current_due
+	if previous_due
+		total_price + previous_due - paid_amount
+	else
+		total_price - paid_amount
+	end
+  end
+  
 end
