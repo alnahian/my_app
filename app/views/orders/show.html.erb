@@ -37,5 +37,14 @@
   <%= number_to_currency(@order.current_due) %>
 </p>
 
+<p>
+  <b>Published at:</b>
+  <%= @order.published_at.strftime('%F %A %R ') %>
+</p>
+
+<p id="pdf_link"><%= link_to "Download Invoice (PDF)", order_path(@order, :format => "pdf") %></p>
+
+
+
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

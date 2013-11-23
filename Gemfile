@@ -7,6 +7,8 @@ gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem "win32-open3-19"
+gem 'pdfkit'
+
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
