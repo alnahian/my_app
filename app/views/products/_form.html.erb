@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :নাম %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :বিবরণ %><br />
 	<%= f.text_area :description, :rows => 6 %>
   </div>
   <div class="field">
-    <%= f.label :image_url %><br />
+    <%= f.label :ছবি %><br />
     <%= f.text_field :image_url %>
   </div>
   <div class="field">
-    <%= f.label :price %><br />
+    <%= f.label :মূল্য %><br />
     <%= f.text_field :price %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'তালিকায় যোগ করুন',class: "btn btn-default btn-warning" %>
   </div>
 <% end %>

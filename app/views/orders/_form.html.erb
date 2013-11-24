@@ -12,38 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :নাম %><br />
     <%= f.text_field :name, :size => 40 %>
   </div>
   <div class="field">
-    <%= f.label :address %><br />
+    <%= f.label :ঠিকানা%><br />
     <%= f.text_area :address, :rows => 3, :cols => 40 %>
   </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
+
   
   <div class="field">
-    <%= f.label :paid_amount %><br />
+    <%= f.label :পরিশোধ_করেছেন %><br />
     <%= f.text_field :paid_amount %>
   </div>
   
   <div class="field">
-    <%= f.label :previous_due %><br />
+    <%= f.label :পূর্বের_বাকি %><br />
     <%= f.text_field :previous_due %>
   </div>
   
   <div class="field">
-    <%= f.label :published_at %><br />
+    <%= f.label :তারিখ %><br />
     <%= f.datetime_select :published_at %>
   </div>
   
-  <div class="field">
-    <%= f.label :pay_type %><br />
-	<%= f.select :pay_type, Order::PAYMENT_TYPES, :prompt => 'Select a payment method' %>
-  </div>
   <div class="actions">
-    <%= f.submit 'Place Order' %>
+    <%= f.submit 'অর্ডার করুন', class: "btn btn-default btn-warning" %>
   </div>
 <% end %>

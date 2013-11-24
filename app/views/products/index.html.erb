@@ -1,18 +1,18 @@
-<h1>Listing products</h1>
+<h1>পণ্যের তালিকা</h1>
 
 <%= form_tag products_path, :method => 'get' do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
+    <%= submit_tag "খুঁজুন", :name => nil, class: "btn btn-small btn-primary" %>
   </p>
 <% end %>
 
 <table>
   <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Image url</th>
-    <th>Price</th>
+    <th>নাম</th>
+    <th>বিবরণ</th>
+    <th>ছবি</th>
+    <th>মূল্য</th>
     <th></th>
     <th></th>
     <th></th>
@@ -24,13 +24,13 @@
     <td><%= product.description %></td>
 	<td><%= image_tag(product.image_url) %></td>
     <td><%= product.price %></td>
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'বিস্তারিত', product %></td>
+    <td><%= link_to 'এডিট করুন', edit_product_path(product) %></td>
+    <td><%= link_to 'মুছে ফেলুন', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Product', new_product_path %>
+<%= link_to 'নতুন পণ্য', new_product_path, class: "btn btn-small btn-primary" %>

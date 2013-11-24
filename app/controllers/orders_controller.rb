@@ -6,6 +6,8 @@ skip_before_filter :authorize, :only => [:new, :create]
       @orders = Order.paginate :page=>params[:page], :order=>'created_at desc',
       :per_page => 10
 
+	  @orders = Order.search(params[:search])
+	  
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @orders }

@@ -8,6 +8,9 @@
 
 
 Product.delete_all
+
+=begin
+
 Product.create(:title => 'Web Design for Developers',
   :description => 
     %{<p>
@@ -45,3 +48,5 @@ Product.create(:title => 'Rails Test Prescriptions',
       </p>},
   :image_url => 'rtp.jpg',
   :price => 43.75)
+  
+=end

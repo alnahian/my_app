@@ -1,11 +1,17 @@
 class Order < ActiveRecord::Base
 
-  attr_accessible :address, :email, :name, :pay_type, :paid_amount, :previous_due, :published_at, :due_amount
+  attr_accessible :address, :name, :paid_amount, :previous_due, :published_at, :due_amount
   has_many :line_items, :dependent => :destroy
-  validates :name, :address, :email, :pay_type, :presence => true
-  PAYMENT_TYPES = [ "Check", "Credit card", "Purchase order" ]
+  validates :name, :address,:presence => true
   
-  validates :pay_type, :inclusion => PAYMENT_TYPES
+  
+  def self.search(search)
+    if search
+      where('name LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
   
   
   def add_line_items_from_cart(cart)

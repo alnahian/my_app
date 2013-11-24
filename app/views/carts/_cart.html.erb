@@ -1,11 +1,14 @@
-
-<div class="cart_title">Your Cart</div>
+</br>
+<div class="cart_title">আপনার পণ্য</div>
 <table>
+</br>
+</br>
+</br>
 <%= render(cart.line_items) %>
 <tr class="total_line">
-<td colspan="2">Total</td>
+<td colspan="2">মোট</td>
 <td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
 </tr>
 </table>
-<%= button_to "Checkout", new_order_path, :method => :get %>
-<%= button_to 'Empty cart', cart, :method => :delete,:confirm => 'Are you sure?' %>
+<%= button_to "অর্ডার করুন", new_order_path, :method => :get, class: "btn btn-small btn-warning" %>
+<%= button_to 'মুছে ফেলুন', cart, :method => :delete,:confirm => 'আপনি নিশ্চিত?', class: "btn btn-small btn-danger" %>

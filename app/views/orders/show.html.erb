@@ -1,44 +1,34 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>নামঃ</b>
   <%= @order.name %>
 </p>
 
 <p>
-  <b>Address:</b>
+  <b>ঠিকানা</b>
   <%= @order.address %>
 </p>
 
 <p>
-  <b>Email:</b>
-  <%= @order.email %>
-</p>
-
-<p>
-  <b>Pay type:</b>
-  <%= @order.pay_type %>
-</p>
-
-<p>
 <%= render @order.line_items %>
-<td class="total_cell">Total : <%= number_to_currency(@order.total_price) %></td>
+<td class="total_cell">সর্বমোট মূল্যঃ <%= number_to_currency(@order.total_price) %></td>
 </br>
 </p>
 </br>
 
 <p>
-  <b>Paid amount:</b>
+  <b>পরিশোধ করা হয়েছেঃ</b>
   <%= number_to_currency(@order.paid_amount) %>
 </p>
 
 <p>
-  <b>Due amount:</b>
+  <b>বাকি রয়েছেঃ:</b>
   <%= number_to_currency(@order.current_due) %>
 </p>
 
 <p>
-  <b>Published at:</b>
+  <b>তারিখঃ</b>
   <%= @order.published_at.strftime('%F %A %R ') %>
 </p>
 
@@ -46,5 +36,5 @@
 
 
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to 'এডিট', edit_order_path(@order) %> |
+<%= link_to 'ফেরত যান', orders_path %>

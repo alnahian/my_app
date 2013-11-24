@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MyApp</title>
+  <title>ক্রয়-বিক্রয়</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -15,14 +15,31 @@
 
 <% if session[:user_id] %>
 <br />
-<%= link_to 'Orders', orders_path %><br />
-<%= link_to 'Products', products_path %><br />
-<%= link_to 'Users', users_path %><br />
+<header class="navbar navbar-fixed-top navbar-inverse">
+ <div class="navbar-inner">
+    <div class="container">
+	
+<nav>
+	<ul class="nav pull-right">
+<li><%= link_to 'অর্ডার', orders_path %><br /></li>
+<li><%= link_to 'পণ্যসমূহ', products_path %><br /></li>
+<li><%= link_to 'ব্যবহারকারি', users_path %><br /></li>
+<li><%= button_to 'লগ আউট', logout_path, :method => :delete,class: "btn btn-large btn-danger" %></li>
+ </ul>
+ </nav>
 <br />
-<%= button_to 'Logout', logout_path, :method => :delete %>
-<% end %>
-<body>
 
+<% end %>
+</div>
+  </div>
+</header>
+<body>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
 <%= yield %>
 
 </body>
