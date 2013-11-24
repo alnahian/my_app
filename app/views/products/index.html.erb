@@ -11,19 +11,21 @@
   <tr>
     <th>নাম</th>
     <th>বিবরণ</th>
+	<th>মূল্য</th>
     <th>ছবি</th>
-    <th>মূল্য</th>
     <th></th>
     <th></th>
     <th></th>
+	</br>
   </tr>
+</br>
 
 <% @products.each do |product| %>
   <tr>
     <td><%= product.title %></td>
     <td><%= product.description %></td>
+	<td><%= product.price %></td>
 	<td><%= image_tag(product.image_url) %></td>
-    <td><%= product.price %></td>
     <td><%= link_to 'বিস্তারিত', product %></td>
     <td><%= link_to 'এডিট করুন', edit_product_path(product) %></td>
     <td><%= link_to 'মুছে ফেলুন', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
