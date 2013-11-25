@@ -26,11 +26,18 @@ class Order < ActiveRecord::Base
   end
   
   def current_due
-	if previous_due
-		total_price + previous_due - paid_amount
+	if paid_amount
+		if previous_due
+			total_price + previous_due - paid_amount
+		else
+			total_price - paid_amount
+		end
 	else
-		total_price - paid_amount
+		if previous_due
+			total_price + previous_due
+		else
+			total_price
+		end
 	end
   end
-  
 end
