@@ -7,7 +7,7 @@
 <%= render(cart.line_items) %>
 <tr class="total_line">
 <td colspan="2">মোট</td>
-<td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
+<td class="total_cell"><%= (cart.total_price) %></td>
 </tr>
 </table>
 <%= button_to "অর্ডার করুন", new_order_path, :method => :get, class: "btn btn-small btn-warning" %>

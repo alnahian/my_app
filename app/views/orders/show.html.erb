@@ -12,19 +12,19 @@
 
 <p>
 <%= render @order.line_items %>
-<td class="total_cell">সর্বমোট মূল্যঃ <%= number_to_currency(@order.total_price) %></td>
+<td class="total_cell">সর্বমোট মূল্যঃ <%= (@order.total_price) %></td>
 </br>
 </p>
 </br>
 
 <p>
   <b>পরিশোধ করা হয়েছেঃ</b>
-  <%= number_to_currency(@order.paid_amount) %>
+  <%= (@order.paid_amount) %>
 </p>
 
 <p>
   <b>বাকি রয়েছেঃ:</b>
-  <%= number_to_currency(@order.current_due) %>
+  <%= (@order.current_due) %>
 </p>
 
 <p>

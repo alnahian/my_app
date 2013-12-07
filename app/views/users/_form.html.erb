@@ -12,21 +12,21 @@ prohibited this user from being saved:</h2>
 </div>
 <% end %>
 <fieldset>
-<legend>Enter User Details</legend>
+<legend>বিস্তারিত বর্ণনা</legend>
 <div>
-<%= f.label :name %>:
+<%= f.label :নাম %>
 <%= f.text_field :name, :size => 40 %>
 </div>
 <div>
-<%= f.label :password, 'Password' %>:
+<%= f.label :password, 'পাসওয়ার্ড' %>
 <%= f.password_field :password, :size => 40 %>
 </div>
 <div>
-<%= f.label :password_confirmation, 'Confirm' %>:
+<%= f.label :password_confirmation, 'নিশ্চিত' %>
 <%= f.password_field :password_confirmation, :size => 40 %>
 </div>
 <div>
-<%= f.submit %>
+<%= f.submit 'সাবমিট', class: "btn btn-default btn-warning" %>
 </div>
 </fieldset>
 <% end %>
